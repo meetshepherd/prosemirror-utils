@@ -1,5 +1,5 @@
 {
-  "name": "prosemirror-utils",
+  "name": "@meetshepherd/prosemirror-utils",
   "version": "0.9.2",
   "description": "Utils library for ProseMirror",
   "main": "dist/index.js",
@@ -15,10 +15,6 @@
     }
   ],
   "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/atlassian/prosemirror-utils.git"
-  },
   "keywords": [
     "ProseMirror",
     "utils",
@@ -42,8 +38,7 @@
     "build_all": "npm run build && npm run build_readme",
     "test": "NODE_ENV=testing jest",
     "test-ci": "NODE_ENV=testing jest --coverage && codecov",
-    "prepare": "npm run build_all",
-    "precommit": "lint-staged"
+    "prepare": "npm run build_all"
   },
   "peerDependencies": {
     "prosemirror-model": "^1.0.0",
@@ -69,12 +64,6 @@
     "prosemirror-view": "^1.1.1",
     "rollup": "^0.56.3",
     "rollup-plugin-babel": "^3.0.3"
-  },
-  "lint-staged": {
-    "*.{js, md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "prettier": {
     "singleQuote": true,
