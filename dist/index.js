@@ -145,9 +145,12 @@ var setTextSelection = function setTextSelection(position) {
 var isSelectableNode = function isSelectableNode(node) {
   return node.type && node.type.spec.selectable;
 };
+var shouldSelectNode = function shouldSelectNode(node) {
+  return isSelectableNode(node) && node.type.isLeaf;
+};
 
 var setSelection = function setSelection(node, pos, tr) {
-  if (isSelectableNode(node)) {
+  if (shouldSelectNode(node)) {
     return tr.setSelection(
       new prosemirrorState.NodeSelection(tr.doc.resolve(pos))
     );
@@ -1894,9 +1897,10 @@ var cloneRowAt = function cloneRowAt(rowIndex) {
           }
         }
 
-        return safeInsert(tableNodes.row.create(cloneRow.attrs, cells), rowPos)(
-          tr
-        );
+        return safeInsert(
+          tableNodes.row.create(cloneRow.attrs, cells),
+          rowPos
+        )(tr);
       }
     }
     return tr;
