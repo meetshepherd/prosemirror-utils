@@ -5,7 +5,7 @@ import {
   addRow,
   removeColumn,
   removeRow
-} from 'prosemirror-tables';
+} from '@meetshepherd/prosemirror-tables';
 import { Selection } from 'prosemirror-state';
 import { Slice } from 'prosemirror-model';
 import { findParentNode, findParentNodeClosestToPos } from './selection';

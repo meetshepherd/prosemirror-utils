@@ -20,6 +20,9 @@
     "utils",
     "helpers"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest"
